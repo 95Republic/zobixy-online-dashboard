@@ -3,9 +3,9 @@
 import { io } from 'socket.io-client';
 
 // Use environment variable for Socket.IO URL
-const SOCKET_URL = process.env.mode === 'prod' ? [process.env.REACT_APP_PROD_SOCKET_UR] : 
-        [process.env.REACT_APP_LOCAL_SOCKET_URL];
-        
+const SOCKET_URL = process.env.REACT_APP_MODE === 'prod' ? process.env.REACT_APP_PROD_SOCKET_URL : 
+        process.env.REACT_APP_LOCAL_SOCKET_URL;
+
 // Export socket instance with options
 export const socket = io(SOCKET_URL, {
   withCredentials: true,
